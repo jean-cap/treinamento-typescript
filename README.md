@@ -1,2 +1,3 @@
-# treinamento-typescript
-# treinamento-typescript
+# Treinamento de typescript
+
+Treinamento básico de typescript.
