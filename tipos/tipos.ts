@@ -10,6 +10,56 @@ idade = 42.5; // Permitido, assim como o JavaScript, o Typescript não faz difer
 console.log(idade);
 
 // boolean
-let possuiHobbies = false;
+let possuiHobbies = true;
 // possuiHobbies = 1; Gera erro pelo mesmo motivo descrito acima.
 console.log(possuiHobbies);
+
+// A inferência de tipos não ocorre quando se declara a variável mas inicializa ela mais tarde.
+let minhaIdade;
+minhaIdade = 42;
+console.log(typeof minhaIdade); // number
+
+minhaIdade = 'Jean Carlos';
+console.log(typeof minhaIdade); // string
+
+// Para evitar isso, é necessário utilizar tipos explícitos:
+let meuNome: string;
+meuNome = 'Jean Carlos';
+// meuNome = 42; Gera erro
+console.log(typeof meuNome);
+
+// array
+let hobbies = ['Ver filmes', 'Jogar videogame'];
+console.log(hobbies[1]);
+console.log(typeof hobbies);
+// hobbies = [100]; Gera erro pois foi inferido o tipo string no momento da declaração do array.
+
+// Isso pode ser contornado utilizando o tipo any.
+let diversos: any[] = ['Abacate', 'Morango'];
+diversos = [10, 20]; // Não gera mais erro.
+
+// tuplas - tuplas devem respeitar o tipo e ordem, neste caso, só é permitido um array contendo uma string seguida de um número
+let endereco: [string, number] = ['Rua XV de novembro', 100];
+console.log(endereco);
+
+// enums
+enum Cor {
+    Azul,
+    Verde,
+    Cinza
+}
+
+let minhaCor: Cor = Cor.Azul;
+
+console.log(minhaCor); // 0
+
+// any (aceita qualquer tipo)
+let carro: any = 'BMW';
+console.log(carro);
+
+carro = {
+    marca: 'BMW',
+    ano: 2022
+}
+console.log(carro);
+
