@@ -8,3 +8,5 @@ Para começar a trabalhar com typescript em um projeto, acessar o diretório do 
 
 `tsc --init`
 
+Isso criará um arquivo de configuração do typescript chamado `tsconfig.json`.
+
